@@ -1,0 +1,10 @@
+Hi Mr. Eddie.
+This paint code includes 2 types of brushes(circle and square), functionality to manipulate brush size, take screesnhot and change brush color.
+INSTRUCTIONS:
+-Press and hold mouse left button to draw. Release to stop drawing.
+-Press 'F' to change brush type between square and circle.
+-Use arrow keys(Up and Down) to change the brush size by +/- 4 pixels.
+-Press 'Enter' to take a screenshot.
+-Press 'R' for red color brush, 'B' for blue color brush and 'G' for green color brush. By deafult, square brush is red and circle is green.
+ 
+Unfortunately, I couldn't figure out  the eraser so I hope you well in one go:)
