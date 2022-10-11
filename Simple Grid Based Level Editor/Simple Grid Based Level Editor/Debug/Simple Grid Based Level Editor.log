@@ -1,0 +1,59 @@
+﻿  Main.cpp
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(187,56): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(188,56): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(195,15): warning C4804: '<=': unsafe use of type 'bool' in operation
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(204,137): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(204,82): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(221,57): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(222,57): warning C4244: '=': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(223,15): warning C4804: '<=': unsafe use of type 'bool' in operation
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(228,53): warning C4244: 'argument': conversion from 'T' to 'int', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(229,52): warning C4244: 'argument': conversion from 'T' to 'const int', possible loss of data
+          with
+          [
+              T=float
+          ]
+E:\VS2022\VC\Tools\MSVC\14.33.31629\include\utility(190,16): warning C4244: 'initializing': conversion from '_Ty' to '_Ty1', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+          and
+          [
+              _Ty1=const int
+          ]
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(211): message : see reference to function template instantiation 'std::pair<const int,sf::Sprite *>::pair<T,sf::Sprite*&,0>(_Other1 &&,_Other2) noexcept' being compiled
+          with
+          [
+              T=float,
+              _Other1=float,
+              _Other2=sf::Sprite *&
+          ]
+E:\UCSC\GAME230\Simple Grid Based Level Editor\Simple Grid Based Level Editor\Main.cpp(211): message : see reference to function template instantiation 'std::pair<const int,sf::Sprite *>::pair<T,sf::Sprite*&,0>(_Other1 &&,_Other2) noexcept' being compiled
+          with
+          [
+              T=float,
+              _Other1=float,
+              _Other2=sf::Sprite *&
+          ]
+  Simple Grid Based Level Editor.vcxproj -> E:\UCSC\GAME230\Simple Grid Based Level Editor\Debug\Simple Grid Based Level Editor.exe
