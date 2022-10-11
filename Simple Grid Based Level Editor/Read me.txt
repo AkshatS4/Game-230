@@ -1,0 +1,5 @@
+All tilesets are loaded initially
+Left click to add a tile
+Right click to remove a tile
+press Spacebar to take a screenshot
+press up/down arrow keys to change tile
