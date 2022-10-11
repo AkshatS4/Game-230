@@ -1,0 +1,6 @@
+﻿  Game.cpp
+  Main.cpp
+E:\UCSC\Game-230\In Class Pointer\In Class Pointer\Main.cpp(30,5): error C2653: 'g': is not a class or namespace name
+E:\UCSC\Game-230\In Class Pointer\In Class Pointer\Main.cpp(30,8): error C3861: 'changeValue': identifier not found
+  Source.cpp
+  Generating Code...
