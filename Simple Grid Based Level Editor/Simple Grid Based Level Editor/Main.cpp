@@ -234,6 +234,15 @@ void handleInput(RenderWindow& window, Event& e)
 
 
     }
+    if (e.key.code == sf::Keyboard::Space) {
+        sf::Texture texture;
+        texture.create(window.getSize().x, window.getSize().y);
+        texture.update(window);
+        if (texture.copyToImage().saveToFile("Grid Level.png"))
+        {
+            std::cout << "Screenshot saved to Grid Level.png" << std::endl;
+        }
+    }
     
    
 }
