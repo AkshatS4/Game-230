@@ -17,8 +17,9 @@ Window window;
 Music bgm;
 SoundBuffer sfxBuffer;
 Sound sfx;
-Texture tileTexture;
+Texture tileTexture[3];
 Sprite tileSprite;
+int SelectedSprite;
 map<int, Sprite*>ViewSprite;
 Font font;
 Text text;
@@ -26,7 +27,7 @@ RectangleShape stem;
 CircleShape flower;
 CircleShape flowerBulb;
 Vector2f CurrentPos = { 0,0 };
-int CurrentLevel [10][10];
+int CurrentLevel[10][10];
 int CurrentTile = 0;
 int TileRow = 0;
 int TileColumn = 0;
@@ -76,9 +77,9 @@ int main()
 void setup(RenderWindow& window)
 {
     // Initializing  Level
-    for ( int i = 0; i < 10; i++) 
+    for (int i = 0; i < 10; i++)
     {
-        for ( int j = 0; j < 10; j++) 
+        for (int j = 0; j < 10; j++)
         {
             CurrentLevel[i][j] = -1;
         }
@@ -98,30 +99,45 @@ void setup(RenderWindow& window)
         cout << "Error loading sfx!" << endl;
     }
 
-    sfx.setBuffer(sfxBuffer); 
+    sfx.setBuffer(sfxBuffer);
 
-    // Texture
+    /* Texture
     if (!tileTexture.loadFromFile("Assets/Graphics/Tile1.png"))
     {
         cout << "Error loading image Tile2.png" << endl;
+    }*/
+
+    //loading textures
+    for (int i = 1; i <= 3; i++)
+    {
+        if (!tileTexture[i-1].loadFromFile("Assets/Graphics/Tile" + to_string(i) + ".png"))
+        {
+            cout << "Can not locate a texture!" << endl;
+            
+        }else 
+            cout << "Loaded texture" << i << endl;
     }
 
+           
+    SelectedSprite = 0;
+    tileSprite.setTexture(tileTexture[SelectedSprite]);
+
     //texture Dimension
-    if (tileTexture.getSize().x % TileWidth != 0 || tileTexture.getSize().y % TileHeight != 0) 
+    if (tileTexture[SelectedSprite].getSize().x % TileWidth != 0 || tileTexture[SelectedSprite].getSize().y % TileHeight != 0)
     {
         cout << "Error Tile row/column size not divisible by tile Size";
         exit(-1);
     }
     else
     {
-        TileRow = tileTexture.getSize().y / TileHeight;
-        TileColumn = tileTexture.getSize().x / TileWidth;
+        TileRow = tileTexture[SelectedSprite].getSize().y / TileHeight;
+        TileColumn = tileTexture[SelectedSprite].getSize().x / TileWidth;
     }
-    
-    
+
+
 
     // Sprite
-    tileSprite.setTexture(tileTexture);
+    tileSprite.setTexture(tileTexture[SelectedSprite]);
     //tileSprite.setPosition(0, 0);
 
     // Font
@@ -150,7 +166,7 @@ void setup(RenderWindow& window)
     // Set the text position
     text.setPosition(96, 96);
 
-    
+
     // Shapes
     stem.setFillColor(Color::Green);
     stem.setPosition(397, 430);
@@ -164,7 +180,7 @@ void setup(RenderWindow& window)
     flowerBulb.setPosition(392, 422);
     flowerBulb.setRadius(8);
     */
-    
+
 }
 
 // This function handles the input portion of our game loop programming pattern
@@ -178,29 +194,45 @@ void handleInput(RenderWindow& window, Event& e)
     {
         tileSprite.setPosition(float(sf::Mouse::getPosition(window).x / TileWidth * TileWidth), float(sf::Mouse::getPosition(window).y / TileHeight * TileHeight));
     }
+
+
+    if (e.type == sf::Event::KeyPressed)
+    {
+        if (e.key.code == sf::Keyboard::Up)
+        {
+            (SelectedSprite == sizeof(tileTexture)/sizeof(Texture) - 1) ? 0 : SelectedSprite++;
+            tileSprite.setTexture(tileTexture[SelectedSprite]);
+        }
+        else if (e.key.code == sf::Keyboard::Down)
+        {
+            (SelectedSprite == 0) ? sizeof(tileTexture) / sizeof(Texture) - 1 : SelectedSprite--;
+            tileSprite.setTexture(tileTexture[SelectedSprite]);
+
+        }
+    }
     //Play sfx on left mouse click
     //Add Sprite on left mouse click
     if (TileAdd && Mouse::isButtonPressed(Mouse::Left))
     {
         //sfx.play();
         TileAdd = false;
-        CurrentPos.x = sf::Mouse::getPosition(window).x/TileWidth;
-        CurrentPos.y = sf::Mouse::getPosition(window).y/TileHeight;
+        CurrentPos.x = sf::Mouse::getPosition(window).x / TileWidth;
+        CurrentPos.y = sf::Mouse::getPosition(window).y / TileHeight;
 
         //checking posistion and level array beofre entering if - for debugging
-        cout << CurrentPos.x <<" " << CurrentPos.y << endl;
+        cout << CurrentPos.x << " " << CurrentPos.y << endl;
         cout << "first " << CurrentLevel[sf::Mouse::getPosition(window).y / TileHeight][sf::Mouse::getPosition(window).x / TileWidth] << endl;
 
         //position.x * 10 because level array 0-99 blocks - example cordinate (9,9) is {(9*10)+9} space inthe level array
-        if (0 <= (CurrentPos.x*10 + CurrentPos.y) <= 99)
+        if (0 <= (CurrentPos.x * 10 + CurrentPos.y) <= 99)
         {
             //for debugging
-            cout << CurrentLevel[sf::Mouse::getPosition(window).y ][sf::Mouse::getPosition(window).x] << endl;
+            cout << CurrentLevel[sf::Mouse::getPosition(window).y][sf::Mouse::getPosition(window).x] << endl;
 
-            if (CurrentLevel[sf::Mouse::getPosition(window).y/TileHeight][sf::Mouse::getPosition(window).x/TileWidth] != CurrentTile)
+            if (CurrentLevel[sf::Mouse::getPosition(window).y / TileHeight][sf::Mouse::getPosition(window).x / TileWidth] != CurrentTile)
             {
                 //new allocates bytpes of object of that size -  in this case, Sprites - otherwise throws exception or  return nullpointer
-                Sprite* thatSprite = new Sprite(tileTexture, IntRect(CurrentTile / TileRow * TileWidth, CurrentTile / TileColumn * TileHeight, TileWidth, TileHeight));
+                Sprite* thatSprite = new Sprite(tileTexture[SelectedSprite], IntRect(CurrentTile / TileRow * TileWidth, CurrentTile / TileColumn * TileHeight, TileWidth, TileHeight));
                 thatSprite->setPosition(Mouse::getPosition(window).x / TileWidth * TileWidth, Mouse::getPosition(window).y / TileHeight * TileHeight);
                 /*if (ViewSprite.count(CurrentPos.x * 10 + CurrentPos.y))
                 {
@@ -208,14 +240,14 @@ void handleInput(RenderWindow& window, Event& e)
                     ViewSprite.erase(CurrentPos.x * 10 + CurrentPos.y);
                 }
                 */
-                ViewSprite.insert({ CurrentPos.x *10 + CurrentPos.y,thatSprite });
+                ViewSprite.insert({ CurrentPos.x * 10 + CurrentPos.y,thatSprite });
                 CurrentLevel[Mouse::getPosition(window).y / TileHeight][Mouse::getPosition(window).x / TileWidth] = CurrentTile;
             }
         }
         TileAdd = true;
-       
-    } 
-    else if(TileRemove && Mouse::isButtonPressed(Mouse::Right))
+
+    }
+    else if (TileRemove && Mouse::isButtonPressed(Mouse::Right))
     {
         TileRemove = false;
         CurrentPos.x = sf::Mouse::getPosition(window).x / TileWidth;
@@ -234,17 +266,8 @@ void handleInput(RenderWindow& window, Event& e)
 
 
     }
-    if (e.key.code == sf::Keyboard::Space) {
-        sf::Texture texture;
-        texture.create(window.getSize().x, window.getSize().y);
-        texture.update(window);
-        if (texture.copyToImage().saveToFile("Grid Level.png"))
-        {
-            std::cout << "Screenshot saved to Grid Level.png" << std::endl;
-        }
-    }
-    
-   
+
+
 }
 
 // This function handles the logic and game step portion of our game loop programming pattern
@@ -263,7 +286,7 @@ void render(RenderWindow& window)
     {
         window.draw(*s.second);
     }
-    
+
 
     // Draw our sprites first
     window.draw(tileSprite);
