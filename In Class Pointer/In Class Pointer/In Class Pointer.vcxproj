@@ -24,6 +24,7 @@
     <ProjectGuid>{9e9533bd-2d0b-46f5-bd6b-5b9f7ef8a5f4}</ProjectGuid>
     <RootNamespace>In_Class_Pointer</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>In Class Pointer, Dynamic memory allocation</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

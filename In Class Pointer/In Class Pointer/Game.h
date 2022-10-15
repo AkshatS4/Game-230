@@ -31,7 +31,7 @@ namespace gm
 		void HandleInput(sf::RenderWindow& window);
 		void Update(sf::RenderWindow& window);
 		void Render(sf::RenderWindow& window);
-		void changeValue(int* i);
+		//void changeValue(int* i);
 		// Destructor
 		~Game();
 	};

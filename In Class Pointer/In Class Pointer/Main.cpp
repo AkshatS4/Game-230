@@ -25,11 +25,13 @@ using namespace gm;
 // Main, our applicaiton entry function
 int main()
 {
-    int i = 5;
+    /*int i = 5;
     int* ip = &i;
     int ia[]{ 1,2,3,4 };
     
     changeValue(ia);
+    */
+
     // Create the window for the game
     RenderWindow window(VideoMode(800, 600), "SFML works!");
 

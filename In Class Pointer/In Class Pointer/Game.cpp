@@ -3,9 +3,37 @@
 
 // Since we are in our private .cpp file, it's fine to use a namespace here
 using namespace gm;
+using namespace sf;
+
+class GameObject
+{
+private:
+	Shape* shape;
+
+public:
+	GameObject(const Vector2f& position, float size)
+	{
+		shape = new CircleShape(size);
+		shape->setPosition(position);
+	}
+	~GameObject()
+	{
+		delete shape;
+	}
+	void update(RenderWindow& window)
+	{
+
+	}
+
+	void render(RenderWindow& window)
+	{
+		window.draw(*shape);
+	}
+};
 
 // Implement constructor, this will effectively be a setup function as the game gets more complex
-Game::Game() {
+Game::Game() 
+{
 
 }
 
@@ -35,12 +63,12 @@ void Game::Render(sf::RenderWindow& window) {
 	// Display the window buffer for this frame
 	window.display();
 }
-
+/*
 void Game::changeValue(int* i)
 {
 	*i += 5;
 
-}
+}*/
 
 // Implement destructor, make sure we free up any memory that we allocated here!
 Game::~Game() {
