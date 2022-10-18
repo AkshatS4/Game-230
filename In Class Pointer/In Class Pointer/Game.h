@@ -13,6 +13,7 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
 
+#include "GameObject.h"
 
  /* STL Includes */
 #include <iostream>
@@ -23,6 +24,10 @@ namespace gm
 	/* Our Game Class                               *
 	 * Implements the Game Loop Programming Pattern */
 	class Game {
+	private:
+		//GameObject test;
+		GameObject** objects; //array of gameobject  pointers
+		
 	public:
 		/* Protoypes */
 		// Constructor

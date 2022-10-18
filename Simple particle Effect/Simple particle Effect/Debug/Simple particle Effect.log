@@ -1,2 +1,6 @@
-﻿  ParticleEffects.cpp
+﻿  Game.cpp
+  Main.cpp
+  Particle.cpp
+  ParticleEffects.cpp
+  Generating Code...
   Simple particle Effect.vcxproj -> E:\UCSC\Game-230\Simple particle Effect\Debug\Simple particle Effect.exe

@@ -40,26 +40,39 @@ namespace gm
 	};
 
 	class Particle {
+	private:
+		//Global variables
+		sf::CircleShape body;
+		float radius = 10;
+		sf::Vector2f position;
+		sf::Vector2f velocity;
+		short lifespan;
+		bool alive;
 	public:
 		//Prototypes
 		Particle();
-		void update(RenderWindow& window);
-		void render(RenderWindow& window);
-		CircleShape getPosition();
-		bool isAlive();
-		void setVelocity(Vector2f vel);
+		void update(sf::RenderWindow& window);
+		void render(sf::RenderWindow& window);
+		sf::CircleShape getShape() const;
+		sf::Vector2f getVelocity() const;
+		bool isAlive() const;
+		void setVelocity(sf::Vector2f vel);
 		~Particle();
 	};
 
-	class ParticleEffect {
+	class ParticleEffect
+	{
+	private:
+		//Global variables
+		Particle* arr[10];
+		sf::Clock clock;
 	public:
 		//Prototypes
 		ParticleEffect();
-		Particle* arr[10];
-		void update(RenderWindow& window);
-		void render(RenderWindow& window);
+		void update(sf::RenderWindow& window);
+		void render(sf::RenderWindow& window);
 		void emit();
-		void addParticle(int index, Particle* particle);
+		Particle* addParticle(int index, Particle* particle);
 	};
 }
 

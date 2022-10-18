@@ -33,7 +33,7 @@ int main()
     */
 
     // Create the window for the game
-    RenderWindow window(VideoMode(800, 600), "SFML works!");
+    RenderWindow window(VideoMode(800, 800), "SFML works!");
 
     Game g;
 

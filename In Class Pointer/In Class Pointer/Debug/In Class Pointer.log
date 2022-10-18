@@ -1,6 +1,4 @@
-﻿  Game.cpp
-  Main.cpp
-E:\UCSC\Game-230\In Class Pointer\In Class Pointer\Main.cpp(30,5): error C2653: 'g': is not a class or namespace name
-E:\UCSC\Game-230\In Class Pointer\In Class Pointer\Main.cpp(30,8): error C3861: 'changeValue': identifier not found
-  Source.cpp
-  Generating Code...
+﻿E:\VS2022\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(534,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (In Class Pointer.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Game.cpp
+E:\UCSC\Game-230\In Class Pointer\In Class Pointer\Game.cpp(27,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  In Class Pointer.vcxproj -> E:\UCSC\Game-230\In Class Pointer\Debug\In Class Pointer, Dynamic memory allocation.exe
