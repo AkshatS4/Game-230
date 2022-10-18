@@ -1,3 +1,4 @@
+//RANDOM GENERATOR BY SYNDEY
 #ifndef RANDOM_H
 #define RANDOM_H
 

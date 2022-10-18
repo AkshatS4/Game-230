@@ -1,3 +1,4 @@
+//AKSHAT SACHAN AND NANXIANG WANG
 // Our include guards
 // These are critical for preventing collision related errors from a file accidentally getting fully included multiple times
 #ifndef GAME_H
@@ -54,6 +55,7 @@ namespace gm
 	public:
 		//Prototypes
 		ParticleEffect();
+		Particle* arr[10];
 		void update(RenderWindow& window);
 		void render(RenderWindow& window);
 		void emit();

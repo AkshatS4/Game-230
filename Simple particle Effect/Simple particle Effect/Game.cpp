@@ -1,3 +1,5 @@
+////AKSHAT SACHAN AND NANXIANG WANG
+
 // We need to include our header file to implement the function prototypes of our Game class
 #include "Game.h"
 #include "Random.h"
