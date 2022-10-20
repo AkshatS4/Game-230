@@ -13,30 +13,36 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
 
+ // Include our custom classes so that we can use it here
 #include "GameObject.h"
-
- /* STL Includes */
-#include <iostream>
+#include "VCircle.h"
+#include "HCircle.h"
 
 // Place our classes, functions, variables, and so forth in their own namespace to avoid naming collisions
-namespace gm 
-{
+namespace gm {
 	/* Our Game Class                               *
 	 * Implements the Game Loop Programming Pattern */
 	class Game {
 	private:
-		//GameObject test;
-		GameObject** objects; //array of gameobject  pointers
+		// A dynamically allocated array of GameObjects
+		// Because it is dynamically allocated, we can specifiy the size at runtime
+		GameObject** objects;
+		GameObject objects2[10];
+
+		//VCircle** objects;
+		//HCircle** objects;
 		
+		// How many GameObjects are in our objects array
+		// This will be set to a random number at runtime
+		int numberObjects;
 	public:
 		/* Protoypes */
 		// Constructor
 		Game();
 		// Game Loop Programming Pattern Methods
-		void HandleInput(sf::RenderWindow& window);
-		void Update(sf::RenderWindow& window);
-		void Render(sf::RenderWindow& window);
-		//void changeValue(int* i);
+		void handleInput(sf::RenderWindow& window);
+		void update(sf::RenderWindow& window);
+		void render(sf::RenderWindow& window);
 		// Destructor
 		~Game();
 	};

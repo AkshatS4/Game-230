@@ -11,34 +11,39 @@
 #include <SFML/OpenGL.hpp>
 #include <SFML/Main.hpp>
 
-	//avoid using namespace in  headers
-
-
+ // Use our gm namespace for both Game and GameObject classes
 namespace gm {
-	class GameObject
-	{
+	// Global constants related to our GameObject
+	const int MinMovementAmount = -3;
+	const int MaxMovementAmount = 3;
+
+	// Our GameObject class! Maintains a shape and functionality needed to manipulate/render it
+	// Will draw a circle and move that circle in a random direction every frame
+	class GameObject {
 	private:
+		// Our shape object that the class maintains
 		sf::CircleShape* shape;
-
 	public:
+		// Default constructor
 		GameObject();
+		// Overloaded constructor
 		GameObject(const sf::Vector2f& position, float size);
-		
-		void update(sf::RenderWindow& window);
-		
-		void render(sf::RenderWindow& window);
 
-		//Setters
+		// Game loop programming pattern functions
+		virtual void update(sf::RenderWindow& window);
+
+		virtual void render(sf::RenderWindow& window);
+
+		// Setters
 		void setPosition(const sf::Vector2f& position);
 		void setSize(float radius);
 
-		//Getters
-		const sf::Vector2f getPosition() const;
+		// Getter
+		const sf::Vector2f& getPosition() const;
 
+		// Destructor
 		~GameObject();
-		
 	};
 }
-
 
 #endif

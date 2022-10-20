@@ -14,27 +14,16 @@
 /* My Classes */
 #include "Game.h"
 
-
-
 /* Namespaces */
 using namespace std;
 using namespace sf;
 using namespace gm;
 
-/* Functions */
 // Main, our applicaiton entry function
 int main()
 {
-    /*int i = 5;
-    int* ip = &i;
-    int ia[]{ 1,2,3,4 };
-    
-    changeValue(ia);
-    */
-
     // Create the window for the game
-    RenderWindow window(VideoMode(800, 800), "SFML works!");
-
+    RenderWindow window(VideoMode(800, 600), "SFML works!");
     Game g;
 
     // This is our game loop!
@@ -42,11 +31,11 @@ int main()
     while (window.isOpen())
     {
         // Our game object handles the game loop programming pattern
-        g.HandleInput(window);
-        
-        g.Update(window);
+        g.handleInput(window);
 
-        g.Render(window);
+        g.update(window);
+
+        g.render(window);
     }
 
     // The game has exited normally so send a normal exit status integer back
