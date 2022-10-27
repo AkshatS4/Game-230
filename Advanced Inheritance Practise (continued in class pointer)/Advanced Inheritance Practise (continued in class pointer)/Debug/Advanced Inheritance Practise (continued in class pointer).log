@@ -1,0 +1,16 @@
+﻿  CircleObject.cpp
+E:\UCSC\Game-230\Advanced Inheritance Practise (continued in class pointer)\Advanced Inheritance Practise (continued in class pointer)\CircleObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Game.cpp
+E:\UCSC\Game-230\Advanced Inheritance Practise (continued in class pointer)\Advanced Inheritance Practise (continued in class pointer)\CircleObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+E:\UCSC\Game-230\Advanced Inheritance Practise (continued in class pointer)\Advanced Inheritance Practise (continued in class pointer)\Game.cpp(19,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  GameObject.cpp
+  HCircle.cpp
+E:\UCSC\Game-230\Advanced Inheritance Practise (continued in class pointer)\Advanced Inheritance Practise (continued in class pointer)\CircleObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Main.cpp
+E:\UCSC\Game-230\Advanced Inheritance Practise (continued in class pointer)\Advanced Inheritance Practise (continued in class pointer)\CircleObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  ShapeObject.cpp
+  Source.cpp
+  VCircle.cpp
+E:\UCSC\Game-230\Advanced Inheritance Practise (continued in class pointer)\Advanced Inheritance Practise (continued in class pointer)\CircleObject.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Generating Code...
+  Advanced Inheritance Practise (continued in class pointer).vcxproj -> E:\UCSC\Game-230\Advanced Inheritance Practise (continued in class pointer)\Debug\Advanced Inheritance Practise (continued in class pointer).exe
