@@ -1,0 +1,10 @@
+PLAYER SELECTION
+Press 1 or 2 for one and two player game respectively
+
+START
+Press Spacebar to start game
+
+
+CONTROLS
+Player 1 : W, S
+Player 2 : Up, Down Arrow Keys
