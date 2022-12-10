@@ -1,0 +1,28 @@
+﻿  Game.cpp
+E:\UCSC\Game-230\FinalQuestion6\FinalQuestion6\Game.cpp(20,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+E:\UCSC\Game-230\FinalQuestion6\FinalQuestion6\Game.cpp(64,93): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+E:\UCSC\Game-230\FinalQuestion6\FinalQuestion6\Game.cpp(64,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+  Main.cpp
+  Particle.cpp
+  ParticleEffect.cpp
+E:\UCSC\Game-230\FinalQuestion6\FinalQuestion6\ParticleEffect.cpp(43,13): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\UCSC\Game-230\FinalQuestion6\FinalQuestion6\ParticleEffect.cpp(44,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+E:\UCSC\Game-230\FinalQuestion6\FinalQuestion6\ParticleEffect.cpp(45,15): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  FinalQuestion6.vcxproj -> E:\UCSC\Game-230\FinalQuestion6\Debug\FinalQuestion6.exe
