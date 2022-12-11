@@ -1,3 +1,0 @@
-﻿  Main.cpp
-E:\UCSC\GAME230\Particle Class Example\Particle Class Example\Main.cpp(38,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-E:\UCSC\GAME230\Particle Class Example\Particle Class Example\Main.cpp(104,21): error C3867: 'Particle::render': non-standard syntax; use '&' to create a pointer to member
